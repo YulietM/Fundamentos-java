@@ -26,7 +26,7 @@ public class CatalogoPeliculasImpl implements CatalogoPeliculas {
     public void listarPeliculas(String nombreArchivo) {
         if(accesoDatos.existe(nombreArchivo)){
             accesoDatos.listar(nombreArchivo);
-            System.out.println("fin de ls lista "+nombreArchivo);
+            System.out.println("****** fin de la lista "+nombreArchivo+" ******");
         }else{
             System.out.println("no existe el archivo "+nombreArchivo);
         }
@@ -52,6 +52,16 @@ public class CatalogoPeliculasImpl implements CatalogoPeliculas {
         }else{
             accesoDatos.crearArchivo(nombreArchivo);
             System.out.println("se creo el archihvo "+nombreArchivo);
+        }
+    }
+
+    @Override
+    public void borrarArchivo(String nombreArchivo) {
+        if(accesoDatos.existe(nombreArchivo)){
+            accesoDatos.borrar(nombreArchivo);
+            System.out.println("el archivo se elimino correctamente");
+        }else{
+            System.out.println("error: no existe el archivo "+nombreArchivo);
         }
     }
 }

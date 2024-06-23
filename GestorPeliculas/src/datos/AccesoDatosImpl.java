@@ -45,7 +45,6 @@ public class AccesoDatosImpl implements AccesoDatos {
         File archivo = new File(nombreArchivo);
         if (archivo.exists()) {
             archivo.delete();
-            System.out.println("el archivo se elimino correctamente");
         }else{
             System.out.println("error en la eliminacion, no se encontro el archivo");
         }
