@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GestorPeliculas/GestorPeliculas.iml" filepath="$PROJECT_DIR$/GestorPeliculas/GestorPeliculas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MundoPC/MundoPC.iml" filepath="$PROJECT_DIR$/MundoPC/MundoPC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/fundamentos-java.iml" filepath="$PROJECT_DIR$/.idea/fundamentos-java.iml" />
+    </modules>
+  </component>
+</project>
