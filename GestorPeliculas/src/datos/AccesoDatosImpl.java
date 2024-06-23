@@ -10,11 +10,10 @@ public class AccesoDatosImpl implements AccesoDatos {
     public boolean existe(String nombreArchivo) {
         File archivo = new File(nombreArchivo);
         if (archivo.exists()) {
-            System.out.println("El archivo si existe");
+            return true;
         }else{
-            System.out.println("El archivo no existe");
+            return false;
         }
-        return false;
     }
 
     @Override
@@ -31,7 +30,7 @@ public class AccesoDatosImpl implements AccesoDatos {
                     System.out.println(s);
                 }
             }catch(IOException e) {
-                System.out.println("No existe el archivo "+nombreArchivo);
+                System.out.println("Error al leer el archivo");
             }finally{
                 System.out.println("fin del listado de peliculas "+ nombreArchivo);
              }
@@ -53,7 +52,7 @@ public class AccesoDatosImpl implements AccesoDatos {
     }
 
     @Override
-    public String buscar(String nombreArchivo, String buscarPelicula) {
+    public String buscar(String nombreArchivo, String buscar) {
         File archivo = new File(nombreArchivo);
         FileReader fre = null;
         BufferedReader bre = null;
@@ -65,9 +64,9 @@ public class AccesoDatosImpl implements AccesoDatos {
                 fre = new FileReader(archivo);
                 bre = new BufferedReader(fre);
                 for(String s = null; (s = bre.readLine()) != null; ) {
-                    if(s.equalsIgnoreCase(buscarPelicula)){
-                        System.out.println("se econtro la pelicula "+s+ " en el archivo "+ nombreArchivo);
-                    }
+                    if(s.equalsIgnoreCase(buscar)){
+                        return s;
+                    }continue;
                 }
             }catch (IOException e){
                 System.out.println("error buscando archivo "+nombreArchivo);
@@ -88,7 +87,6 @@ public class AccesoDatosImpl implements AccesoDatos {
                     PrintWriter salida = new PrintWriter(new FileWriter(archivo, true));
                     salida.println(pelicula.getNombre());
                     salida.close();
-                    System.out.println("se ha agregado la pelicula en el archivo "+ nombreArchivo);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace(System.out);
                 } catch (IOException e) {
@@ -116,7 +114,6 @@ public class AccesoDatosImpl implements AccesoDatos {
             try {
                 PrintWriter salida = new PrintWriter(archivo);
                 salida.close();
-                System.out.println("se ha creado el archivo " + nombreArchivo);
             } catch (FileNotFoundException e) {
                 e.printStackTrace(System.out);
             }
