@@ -1,7 +1,4 @@
-import datos.AccesoDatos;
 import datos.AccesoDatosImpl;
-import domain.Pelicula;
-import exepciones.AccesoDatosEx;
 import negocio.CatalogoPeliculas;
 import negocio.CatalogoPeliculasImpl;
 
@@ -18,8 +15,11 @@ public class main {
         //datos.listar("animados.txt");
         //datos.buscar("animados.txt", "luca");
 
-        catalogoPeliculas.agrgarPelicula("intensamente 2", "animados.txt");
+        //catalogoPeliculas.agrgarPelicula("la princesa y el sapo", "animados.txt");
         //catalogoPeliculas.listarPeliculas("anidados");
+        //catalogoPeliculas.listarPeliculas("animados.txt");
+        //catalogoPeliculas.buscarPelicula("animados.txt", "luca");
+        catalogoPeliculas.iniciarArchivo("yuli2.txt");
 
     }
 }
